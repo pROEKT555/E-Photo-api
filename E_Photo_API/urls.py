@@ -19,12 +19,9 @@ from django.urls import path, include
 from rest_framework import routers
 
 from E_Photo_API.apps.e_photo_upload import views
-
-e_photo_upload_router = routers.DefaultRouter()
-e_photo_upload_router.register(r'users', views.UserViewSet)
-
+from E_Photo_API.apps.e_user.views import RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(e_photo_upload_router.urls)),
+    path('register/', RegisterView.as_view(), name='register'),
 ]
