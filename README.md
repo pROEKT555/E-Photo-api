@@ -15,3 +15,12 @@ in `http://127.0.0.1:8000/register/` only **POST**:
     ]
 }
 ```
+
+in `http://127.0.0.1:8000/register/` only **POST**:
+```json
+{
+    "username": "zxc",
+    "password": "zxc"
+}   // має відправляти cookies
+```
+

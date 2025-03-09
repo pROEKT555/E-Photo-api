@@ -14,6 +14,14 @@ class UserRegistrationSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ['username', 'password', 'email', 'groups']
 
+class UserLoginSerializer(serializers.Serializer):
+    username = serializers.CharField(max_length=150, required=True)
+    password = serializers.CharField(max_length=128, write_only=True)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group

@@ -19,9 +19,10 @@ from django.urls import path, include
 from rest_framework import routers
 
 from E_Photo_API.apps.e_photo_upload import views
-from E_Photo_API.apps.e_user.views import RegisterView
+from E_Photo_API.apps.e_user.views import RegisterView, LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', RegisterView.as_view(), name='register'),
+    path('login/', LoginView.as_view(), name='login'),
 ]
